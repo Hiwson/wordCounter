@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>word counter</title>
+  <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+</head>
+
+<body>
+  <div id="container">
+    
+    <div id="logo">
+      <i class="fa-solid fa-bars" id="bar"></i>
+    </div>
+    
+    <div id="drop">
+      <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li>More</li>
+        <li>Contact</li>
+      </ul>
+    </div>
+    <h1>Analyze your text <br> in real time</h1>
+    
+    <textarea name="" id="textpad" rows="10" placeholder="Start typing......(or paste you text)" oninput="charCount.innerHTML = this.value.length; limitCheck(); wordCount(); sentCount();"></textarea>
+    
+    <div id="checkers-holder">
+      <div id="checkers">
+        <div>
+        <input type="checkbox" class="check" id="check1">
+        <label for="check1">:Exclude Spaces</label>
+        </div>
+        <div>
+        <input type="checkbox" class="check" id="check2" onclick="limit()">
+        <label for="check2">:Set Character Limit</label>
+        </div>
+        <p>Approx reading time: <span>00</span> minutes</p>
+      </div>
+      
+    </div>
+    
+    <div id="cardsHolder">
+      <div class="cards c1">
+        <p>Total Characters</p>
+        <p><span id="charCount">00</span></p>
+      </div>
+      <div class="cards c2">
+        <p>Word Count</p>
+        <p><span id="words">00</span></p>
+      </div>
+      <div class="cards c3">
+        <p>Sentence Count</p>
+        <p><span id="sent">00</span></p>
+      </div>
+    </div>
+    
+    <p id="density">Letter density <span>0</span></p>
+    <p id="comment">No Character found.Start typing to see the density</p>
+    
+  </div>
+  
+  <script src="wordCount.js"></script>
+  <script src="https://kit.fontawesome.com/31326d426c.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
